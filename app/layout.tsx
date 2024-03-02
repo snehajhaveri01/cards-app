@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-// import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from "./context/ThemeContext";
 import "./globals.css";
 import StoreProvider from "./StoreProvider"; 
 import NavBar from "./components/NavBar";
@@ -20,12 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <ThemeProvider>
         <StoreProvider>
-          {/* <ThemeProvider theme={{ light: lightTheme, dark: darkTheme }}> */}
             <NavBar />
             {children}
-          {/* </ThemeProvider> */}
         </StoreProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -16,8 +16,13 @@
   }
 }
 
-body {
-  padding: 1rem;
+.light{
+  background-color : #E1EAFB;
+  color: rgb(83, 80, 80);
+}
+.dark{
+  background-color : #0b0f16;
+  color: white;
 }
 
 @layer utilities {

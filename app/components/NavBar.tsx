@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import ThemeToggle from './ThemeToggle';
 
@@ -22,14 +21,14 @@ const NavBar: React.FC = () => {
             <nav aria-label="Global">
               <ul className="flex items-center gap-6 text-sm">
                 <li>
-                  <a className="text-gray-600 transition hover:text-gray-500/75" href="/">
+                  <a className="transition hover:text-gray-500/75" href="/">
                     {' '}
                     Home{' '}
                   </a>
                 </li>
 
                 <li>
-                  <a className="text-gray-600 transition hover:text-gray-500/75" href="/chart">
+                  <a className="transition hover:text-gray-500/75" href="/chart">
                     {' '}
                     Charts{' '}
                   </a>
@@ -40,14 +39,6 @@ const NavBar: React.FC = () => {
 
           <div className="flex items-center gap-4">
             <ThemeToggle/>
-            {/* <div className="sm:flex sm:gap-4">
-              <Link
-                className="rounded-md bg-amber-800 px-5 py-2.5 text-sm font-medium text-white shadow"
-                href="#"
-              >
-                THEME
-              </Link>
-            </div> */}
           </div>
         </div>
       </div>

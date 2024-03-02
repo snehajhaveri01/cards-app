@@ -34,11 +34,8 @@ const MemeGenerator = () => {
         width={500}  
         height={500} 
         />
-      {/* <p style={{ fontSize: currentMeme.fontSize, color: currentMeme.fontColor }}> */}
-        {/* {currentMeme.phrase} */}
-      {/* </p>s */}
     <br/>
-      <button   onClick={handleReroll}>Reroll Meme</button>
+      <button onClick={handleReroll}>Reroll Meme</button>
     </div>
   );
 };
