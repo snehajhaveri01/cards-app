@@ -8,9 +8,9 @@ import { Console } from "console";
 interface CardProps {
   backgroundImage?: string;
   showLink?: boolean;
-  title: string;
-  description: string;
-  image: string;
+  title?: string;
+  description?: string;
+  image?: string;
 }
 
 export async function getStaticProps() {
