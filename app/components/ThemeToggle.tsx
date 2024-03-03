@@ -13,10 +13,9 @@ const ThemeToggle: React.FC = () => {
 
   return (
     <button
-      className={` ${
-        theme === 'light' ? 'dark' : 'light'
-      }`}
-      onClick={theme === 'light' ? switchDark : switchLight}
+      onClick={
+        theme === 'light' ? switchDark : switchLight
+      }
     >
       {
           theme === 'light' ? (

@@ -11,7 +11,12 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ backgroundImage, showLink = true }) => {
   return (
     <div className="flex items-center justify-center h-screen">
-      <MotionDiv animate={{ y: 80 }} transition={{ duration: 1 }}>
+      <MotionDiv 
+      initial={{ y: -1000, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ x: 0, opacity: 0 }}
+      transition={{ type: 'spring', duration: 1, delay: 0.5 }}
+      >
         <div
           className="w-96 bg-rose-200 bg-opacity-40 backdrop-blur-md rounded-lg shadow-lg p-4 mb-40"
           style={{

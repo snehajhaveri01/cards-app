@@ -64,7 +64,7 @@ function Chart() {
     };
   
     return (
-      <div className="flex">
+      <div className="flex h-screen ml-24 ">
         {/* Chart Column */}
         <div className="flex-1 pr-4">
           {isLoading ? (
