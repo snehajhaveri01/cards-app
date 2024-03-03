@@ -79,6 +79,7 @@ const Card: React.FC<CardProps> = ({ backgroundImage, showLink = true,  title, d
           </div>
           <div className="p-4">
             <p className="text-xl font-semibold">{title}</p>
+            <p className="text-xl font-semibold">Coffee Feels</p>
             <p className="text-sm">
               Sipping coffee feels like a warm hug, kickstarting your day with
               delightful joy and aromatic bliss. Coffee, the elixir of joy,
