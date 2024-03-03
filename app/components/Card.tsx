@@ -2,13 +2,50 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MotionDiv } from "./MotionDiv";
+import { client } from '../contentful/Contentful';
+import { Console } from "console";
 
 interface CardProps {
   backgroundImage?: string;
   showLink?: boolean;
+  title: string;
+  description: string;
+  image: string;
 }
 
-const Card: React.FC<CardProps> = ({ backgroundImage, showLink = true }) => {
+export async function getStaticProps() {
+  try {
+    const response = await client.getEntry(process.env.ENTRY_ID as string);
+
+    // Check if response is undefined or if fields are undefined
+    if (!response || !response.fields) {
+      throw new Error("Invalid response from Contentful");
+    }
+
+    console.log("Contentful Response:", response);
+
+    return {
+      props: {
+        title: response.fields.title || '',
+        description: response.fields.description || '',
+        image: response.fields.image || '',
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching data from Contentful:", error);
+
+    return {
+      props: {
+        title: '',
+        description: '',
+        image: '',
+      },
+    };
+  }
+}
+
+const Card: React.FC<CardProps> = ({ backgroundImage, showLink = true,  title, description, image}) => {
+
   return (
     <div className="flex items-center justify-center h-screen">
       <MotionDiv 
@@ -41,7 +78,7 @@ const Card: React.FC<CardProps> = ({ backgroundImage, showLink = true }) => {
             )}
           </div>
           <div className="p-4">
-            <p className="text-xl font-semibold">Coffee Feels</p>
+            <p className="text-xl font-semibold">{title}</p>
             <p className="text-sm">
               Sipping coffee feels like a warm hug, kickstarting your day with
               delightful joy and aromatic bliss. Coffee, the elixir of joy,
