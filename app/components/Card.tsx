@@ -8,9 +8,9 @@ import { Console } from "console";
 interface CardProps {
   backgroundImage?: string;
   showLink?: boolean;
-  title?: string;
-  description?: string;
-  image?: string;
+  // title?: string;
+  // description?: string;
+  // image?: string;
 }
 
 export async function getStaticProps() {
@@ -44,7 +44,7 @@ export async function getStaticProps() {
   }
 }
 
-const Card: React.FC<CardProps> = ({ backgroundImage, showLink = true,  title, description, image}) => {
+const Card: React.FC<CardProps> = ({ backgroundImage, showLink = true}) => {
 
   return (
     <div className="flex items-center justify-center h-screen">
@@ -78,7 +78,7 @@ const Card: React.FC<CardProps> = ({ backgroundImage, showLink = true,  title, d
             )}
           </div>
           <div className="p-4">
-            <p className="text-xl font-semibold">{title}</p>
+            {/* <p className="text-xl font-semibold">{title}</p> */}
             <p className="text-xl font-semibold">Coffee Feels</p>
             <p className="text-sm">
               Sipping coffee feels like a warm hug, kickstarting your day with
